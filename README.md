@@ -1,4 +1,5 @@
 # eyes
+[![Go Report Card](https://goreportcard.com/badge/github.com/naltun/eyes)](https://goreportcard.com/report/github.com/naltun/eyes)
 
 ### What is _eyes_?
 _eyes_ is complete Golang rewrite of the [_eyes.sh_](https://github.com/naltun/eyes.sh) BASH script that scans domains and IP addresses for relevant information. It is useful for information gathering during penetration testing, and it utilizes APIs to keep your identity safe.
