@@ -96,7 +96,6 @@ func eyes() {
 		display()
 
 	case "5":
-		fmt.Println("**This feature requires being looked at.**")
 		fmt.Print("Enter a domain or IP address: ")
 		fmt.Scanln(&target)
 		apiUrl := "http://api.hackertarget.com/httpheaders/?q=" + target
