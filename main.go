@@ -29,14 +29,17 @@ func curlReq(url string) string {
 
 // banner created with figlet.js (github.com/patorjk/figlet.js)
 func banner() {
-	fmt.Println("  ____")
-	fmt.Println(" |  __|")
-	fmt.Println(" | |__ _   _  ___  ___")
-	fmt.Println(" |  __| | | |/ _ \\/ __|")
-	fmt.Println(" | |__| |_| |  __/\\__ \\ ")
-	fmt.Println(" \\____/\\__, |\\___||___/ v0.1beta")
-	fmt.Println("        __/ |")
-	fmt.Printf("       |____/\n\n")
+	fmt.Print(`
+  ____
+ |  __|
+ | |__ _   _  ___  ___
+ |  __| | | |/ _ \/ __|
+ | |__| |_| |  __/\__ \ 
+ \____/\__, |\___||___/ v0.1beta
+        __/ |
+       |____/
+
+`)
 }
 
 func menu() {
