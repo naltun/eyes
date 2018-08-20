@@ -43,19 +43,22 @@ func banner() {
 }
 
 func menu() {
-	fmt.Println("1.  Whois Lookup")
-	fmt.Println("2.  DNS Lookup + Cloudflare Detector")
-	fmt.Println("3.  Zone Transfer")
-	fmt.Println("4.  Port Scan")
-	fmt.Println("5.  HTTP Header Grabber")
-	fmt.Println("6.  Honeypot Detector")
-	fmt.Println("7.  Robots.txt Scanner")
-	fmt.Println("8.  Link Grabber")
-	fmt.Println("9.  IP Location Finder")
-	fmt.Println("10. Traceroute")
-	fmt.Println("11. Domain-to-IP Lookup")
-	fmt.Println("12. About program")
-	fmt.Println("13. Exit program")
+	fmt.Print(`
+1. Whois Lookup
+2. DNS Lookup + Cloudflare Detector
+3. Zone Transfer
+4. Port Scan
+5. HTTP Header Grabber
+6. Honeypot Detector
+7. Robots.txt Scanner
+8. Link Grabber
+9. IP Location Finder
+10. Traceroute
+11. Domain-to-IP Lookup
+12. About Program
+13. Exit Program
+
+`)
 }
 
 func eyes() {
@@ -180,9 +183,7 @@ func eyes() {
 }
 
 func display() {
-	fmt.Println("")
 	menu()
-	fmt.Println("")
 	eyes()
 }
 
