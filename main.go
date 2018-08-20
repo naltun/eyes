@@ -34,7 +34,7 @@ func banner() {
  |  __|
  | |__ _   _  ___  ___
  |  __| | | |/ _ \/ __|
- | |__| |_| |  __/\__ \ 
+ | |__| |_| |  __/\__ \
  \____/\__, |\___||___/ v0.1beta
         __/ |
        |____/
@@ -99,7 +99,7 @@ func eyes() {
 		fmt.Println("**This feature requires being looked at.**")
 		fmt.Print("Enter a domain or IP address: ")
 		fmt.Scanln(&target)
-		apiUrl := "http://api.hackertarget.com/httpheaders/?q" + target
+		apiUrl := "http://api.hackertarget.com/httpheaders/?q=" + target
 		fmt.Println(curlReq(apiUrl))
 		display()
 
