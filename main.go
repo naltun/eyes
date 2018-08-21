@@ -6,6 +6,8 @@ import (
 	"net"
 	"net/http"
 	"os"
+
+	whois "github.com/likexian/whois-go"
 )
 
 /**************
@@ -61,6 +63,15 @@ func menu() {
 `)
 }
 
+func whoIs(url string) string {
+	res, err := whois.Whois(url)
+	if err != nil {
+		panic(err)
+		display()
+	}
+	return res
+}
+
 func eyes() {
 	fmt.Print("What do you want to do? ")
 	fmt.Scanln(&choice)
@@ -69,8 +80,7 @@ func eyes() {
 	case "1":
 		fmt.Print("Enter a domain or IP address: ")
 		fmt.Scanln(&target)
-		apiUrl := "http://api.hackertarget.com/whois/?q=" + target
-		fmt.Println(curlReq(apiUrl))
+		fmt.Println(whoIs(target))
 		display()
 
 	case "2":
