@@ -63,15 +63,6 @@ func menu() {
 `)
 }
 
-func whoIs(url string) string {
-	res, err := whois.Whois(url)
-	if err != nil {
-		panic(err)
-		display()
-	}
-	return res
-}
-
 func eyes() {
 	fmt.Print("What do you want to do? ")
 	fmt.Scanln(&choice)
@@ -80,7 +71,12 @@ func eyes() {
 	case "1":
 		fmt.Print("Enter a domain or IP address: ")
 		fmt.Scanln(&target)
-		fmt.Println(whoIs(target))
+		res, err := whois.Whois(target)
+		if err != nil {
+			panic(err)
+			display()
+		}
+		fmt.Println(res)
 		display()
 
 	case "2":
