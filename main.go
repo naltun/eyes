@@ -14,13 +14,13 @@ import (
 
 The structure of the `eyes' source code is as follows:
 
-	Variables
-		|
-		v
-	Functions
-		|
-		v
-	  Main
+Variables
+    |
+    v
+Functions
+    |
+    v
+  Main
 
 #############
 # VARIABLES #
