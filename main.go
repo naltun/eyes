@@ -10,9 +10,57 @@ import (
 	whois "github.com/likexian/whois-go"
 )
 
+/*
+
+The structure of the `eyes' source code is as follows:
+
+	Variables
+		|
+		v
+	Functions
+		|
+		v
+	  Main
+
+#############
+# VARIABLES #
+#############
+
+In this section, we declare variables that we will use elsewhere in the source code.
+
+#############
+# FUNCTIONS #
+#############
+
+In this section, we delcare any functions that we need. The primary function that
+we will use is eyes(). This is the function that handles 1) variables and
+2) functions to implement the program logic.
+
+In the eyes() function, we use a simple switch statement to handle user input
+and complete tasks. For each case, we handle the logic for accomplishing the task.
+
+NOTE: Effort is made to keep the program API as small as possible. To aid this effort,
+instead of starting with a new function, we should first consider whether we can add
+the logic under a particular switch case.
+
+The example for this can be case "1": originally written as a whoIs() function, code was
+added directly under case "1" and the function was removed in order to keep the API small.
+
+########
+# MAIN #
+########
+
+In this section, we leverage our functions to handle the logic. Under main, the primary
+function we will use is eyes().
+
+Effort is made to keep the main function as small as possible.
+
+*/
+
 /**************
 ** VARIABLES  *
 **************/
+
 var choice string
 var target string
 
