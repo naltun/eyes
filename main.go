@@ -7,7 +7,8 @@ import (
 	"net/http"
 	"os"
 
-	whois "github.com/likexian/whois-go"
+	"github.com/likexian/whois-go"
+	"github.com/lixiangzhong/traceroute"
 )
 
 /*
@@ -121,7 +122,7 @@ func eyes() {
 		fmt.Scanln(&target)
 		res, err := whois.Whois(target)
 		if err != nil {
-			panic(err)
+			fmt.Println(err)
 			display()
 		}
 		fmt.Println(res)
@@ -197,14 +198,28 @@ func eyes() {
 		display()
 
 	case "10":
+		if os.Getuid() != 0 {
+			fmt.Println("This feature requires root access. Please exit and relaunch as root.")
+			display()
+		}
+
 		fmt.Print("Enter a domain or IP address: ")
 		fmt.Scanln(&target)
 		if target == "" {
 			fmt.Println("No argument given.")
 			display()
 		}
-		apiUrl := "https://api.hackertarget.com/mtr/?q=" + target
-		fmt.Println(curlReq(apiUrl))
+
+		t := traceroute.New(target)
+		res, err := t.Do()
+		if err != nil {
+			fmt.Println(err)
+			display()
+		}
+
+		for _, route := range res {
+			fmt.Println(route)
+		}
 		display()
 
 	case "11":
