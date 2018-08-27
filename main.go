@@ -162,14 +162,11 @@ func eyes() {
 		display()
 
 	case "7":
-		fmt.Print("This feature makes a direct call to the target -- would you like to continue? [Y\n] ")
+		fmt.Print("This feature makes a direct call to the target -- would you like to continue? [Y/n] ")
 		var answer string
 		fmt.Scanln(&answer)
-		if answer == "" {
-			fmt.Print("No argument given.")
-			display()
-		} else if answer == "y" {
-			fmt.Println("Enter domain (without protocol): ")
+		if answer == "y" {
+			fmt.Print("Enter domain (without protocol): ")
 			fmt.Scanln(&target)
 			apiUrl := "http://" + target + "/robots.txt"
 			fmt.Println(curlReq(apiUrl))
