@@ -1,5 +1,5 @@
 # eyes
-[![Go Report Card](https://goreportcard.com/badge/github.com/naltun/eyes)](https://goreportcard.com/report/github.com/naltun/eyes) [![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg)](https://gitter.im/eyes-dev)
+[![Go Report Card](https://goreportcard.com/badge/github.com/naltun/eyes)](https://goreportcard.com/report/github.com/naltun/eyes) [![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg)](https://gitter.im/eyes-dev) [![Shields.io](https://img.shields.io/badge/free%20software-support%20free%2Flibre%20software-yellow.svg)](https://en.wikipedia.org/wiki/Free_software)
 
 ### What is _eyes_?
 _eyes_ is complete Golang rewrite of the [_eyes.sh_](https://github.com/naltun/eyes.sh) BASH script that scans domains and IP addresses for relevant information. It is useful for information gathering during penetration testing, and it utilizes APIs to keep your identity safe.
