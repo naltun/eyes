@@ -11,7 +11,11 @@ func Httpheader(domain string) (response http.Response, err error) {
 		err = fmt.Errorf("Domain is empty")
 		return
 	}
-	client := &http.Client{}
+	client := &http.Client{
+		CheckRedirect: func(req *http.Request, via []*http.Request) error {
+			return http.ErrUseLastResponse
+		},
+	}
 
 	res, err := client.Get(domain)
 	if err != nil {
@@ -19,4 +23,13 @@ func Httpheader(domain string) (response http.Response, err error) {
 	}
 	response = *res
 	return
+}
+
+func Parseoutput(response http.Response) {
+	fmt.Println(response.Proto)
+	fmt.Println("Content-Length:", response.ContentLength)
+	head := response.Header
+	for k, v := range head {
+		fmt.Printf("%s : %s \n", k, v)
+	}
 }

@@ -152,9 +152,7 @@ func eyes() {
 		if err != nil {
 			fmt.Println(err)
 		}
-		fmt.Println(res)
-		//apiUrl := "http://api.hackertarget.com/httpheaders/?q=" + target
-		//fmt.Println(curlReq(apiUrl))
+		httpheader.Parseoutput(res)
 		display()
 
 	case "6":
