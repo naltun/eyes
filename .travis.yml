@@ -6,4 +6,4 @@ go:
   - "1.x"
 
 script:
-  - go test -v ./...
+  - go run main.go
