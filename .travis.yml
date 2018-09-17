@@ -1,9 +1,0 @@
-language : go
-
-go_import_path: eyes/httpheader/
-
-go:
-  - "1.x"
-
-script:
-  - go run main.go
