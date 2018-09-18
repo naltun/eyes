@@ -29,7 +29,7 @@ func Parseoutput(response http.Response) {
 	fmt.Println(response.Proto)
 	fmt.Println("Content-Length:", response.ContentLength)
 	head := response.Header
-	for k, v := range head {
-		fmt.Printf("%s : %s \n", k, v)
+	for k := range head {
+		fmt.Printf("%s : %s \n", k, head[k][0])
 	}
 }

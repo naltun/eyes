@@ -1,7 +1,7 @@
 package main
 
 import (
-	"./httpheader"
+	"./pkg/httpheader"
 	"fmt"
 	"io/ioutil"
 	"net"
