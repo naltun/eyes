@@ -104,6 +104,7 @@ func eyes() {
 		res, err := httpheader.Httpheader(target)
 		if err != nil {
 			fmt.Println(err)
+			display()
 		}
 		httpheader.Parseoutput(res)
 		display()
