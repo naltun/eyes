@@ -1,14 +1,12 @@
 package main
 
 import (
+	"./pkg/httpheader"
 	"fmt"
 	"io/ioutil"
 	"net"
 	"net/http"
 	"os"
-
-	"github.com/likexian/whois-go"
-	"github.com/lixiangzhong/traceroute"
 )
 
 /*
@@ -120,12 +118,7 @@ func eyes() {
 	case "1":
 		fmt.Print("Enter a domain or IP address: ")
 		fmt.Scanln(&target)
-		res, err := whois.Whois(target)
-		if err != nil {
-			fmt.Println(err)
-			display()
-		}
-		fmt.Println(res)
+		fmt.Println("still working on this feature")
 		display()
 
 	case "2":
@@ -139,11 +132,13 @@ func eyes() {
 	case "3":
 		fmt.Print("Enter a domain: ")
 		fmt.Scanln(&target)
+
 		apiUrl := "http://api.hackertarget.com/zonetransfer/?q=" + target
 		fmt.Println(curlReq(apiUrl))
 		display()
 
 	case "4":
+
 		fmt.Print("Enter a domain or IP address: ")
 		fmt.Scanln(&target)
 		apiUrl := "http://api.hackertarget.com/nmap/?q=" + target
@@ -153,8 +148,11 @@ func eyes() {
 	case "5":
 		fmt.Print("Enter a domain or IP address: ")
 		fmt.Scanln(&target)
-		apiUrl := "http://api.hackertarget.com/httpheaders/?q=" + target
-		fmt.Println(curlReq(apiUrl))
+		res, err := httpheader.Httpheader(target)
+		if err != nil {
+			fmt.Println(err)
+		}
+		httpheader.Parseoutput(res)
 		display()
 
 	case "6":
@@ -200,24 +198,24 @@ func eyes() {
 			display()
 		}
 
-		fmt.Print("Enter a domain or IP address: ")
-		fmt.Scanln(&target)
-		if target == "" {
-			fmt.Println("No argument given.")
-			display()
-		}
+		// fmt.Print("Enter a domain or IP address: ")
+		// fmt.Scanln(&target)
+		// if target == "" {
+		// 	fmt.Println("No argument given.")
+		// 	display()
+		// }
 
-		t := traceroute.New(target)
-		res, err := t.Do()
-		if err != nil {
-			fmt.Println(err)
-			display()
-		}
+		// t := traceroute.New(target)
+		// res, err := t.Do()
+		// if err != nil {
+		// 	fmt.Println(err)
+		// 	display()
+		// }
 
-		for _, route := range res {
-			fmt.Println(route)
-		}
-		display()
+		// for _, route := range res {
+		// 	fmt.Println(route)
+		// }
+		// display()
 
 	case "11":
 		fmt.Print("Enter a domain: ")
