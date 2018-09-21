@@ -2,11 +2,12 @@ package main
 
 import (
 	"fmt"
-	"github.com/naltun/eyes/pkg/httpheader"
 	"io/ioutil"
 	"net"
 	"net/http"
 	"os"
+
+	"github.com/naltun/eyes/pkg/httpheader"
 )
 
 /**************
