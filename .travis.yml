@@ -13,6 +13,6 @@ notifications:
 install: true
 
 script:
-  - go install $GOPATH/src/github.com/sahit/eyes
-  - $GOPATH/bin/eyes
+  - go install ${TRAVIS_HOME}/gopath/src/github.com/sahitpj/eyes
+  - ${TRAVIS_HOME}/gopath/bin/eyes
 
