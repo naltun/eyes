@@ -11,6 +11,3 @@ notifications:
   email: false
 
 install: true
-
-
-
