@@ -1,8 +1,8 @@
 package main
 
 import (
-	"./pkg/httpheader"
 	"fmt"
+	"github.com/sahitpj/eyes/pkg/httpheader"
 	"io/ioutil"
 	"net"
 	"net/http"

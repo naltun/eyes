@@ -12,7 +12,5 @@ notifications:
 
 install: true
 
-script:
-  - go install ${TRAVIS_HOME}/gopath/src/github.com/sahitpj/eyes
-  - ${TRAVIS_HOME}/gopath/bin/eyes
+
 
