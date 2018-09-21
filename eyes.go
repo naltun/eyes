@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/sahitpj/eyes/pkg/httpheader"
+	"github.com/naltun/eyes/pkg/httpheader"
 	"io/ioutil"
 	"net"
 	"net/http"
