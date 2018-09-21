@@ -11,3 +11,8 @@ notifications:
   email: false
 
 install: true
+
+script:
+  - go install $GOPATH/src/github.com/sahit/eyes
+  - $GOPATH/bin/eyes
+
