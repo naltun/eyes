@@ -1,0 +1,16 @@
+language: go
+
+os : 
+  - linux
+  - osx
+
+go:
+  "1.x"
+
+notifications:
+  email: false
+
+install: true
+
+
+
