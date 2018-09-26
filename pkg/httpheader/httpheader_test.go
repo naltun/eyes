@@ -12,7 +12,7 @@ func testHttpHeader(t *testing.T) {
 	if err != nil {
 		t.Errorf("httpheader.Httpheader() failed:\n%s", err)
 	}
-	_, err := httpheader.Httpheader(testTarget2)
+	_, err = httpheader.Httpheader(testTarget2)
 	if err != nil {
 		t.Errorf("httpheader.Httpheader() failed:\n%s", err)
 	}
