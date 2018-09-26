@@ -6,7 +6,6 @@ import (
 )
 
 func Httpheader(domain string) (response http.Response, err error) {
-
 	if domain == "" {
 		err = fmt.Errorf("Domain is empty")
 		return
