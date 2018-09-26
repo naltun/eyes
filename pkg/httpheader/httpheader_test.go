@@ -10,10 +10,10 @@ func testHttpHeader(t *testing.T) {
 	testTarget2 := "https://www.cnet.com/"
 	_, err := httpheader.Httpheader(testTarget1)
 	if err != nil {
-		t.Errorf("httpheader.Httpheader() failed:\n %s", err)
+		t.Errorf("httpheader.Httpheader() failed:\n%s", err)
 	}
-	-, err := httpheader.Httpheader(testTarget2)
-	if err := nil {
-		t.Error("httpheader.Httpheader() failed:\n  %s", err)
+	_, err := httpheader.Httpheader(testTarget2)
+	if err != nil {
+		t.Errorf("httpheader.Httpheader() failed:\n%s", err)
 	}
 }
