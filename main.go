@@ -8,6 +8,7 @@ import (
 	"os"
 
 	"github.com/naltun/eyes/pkg/httpheader"
+	"github.com/naltun/eyes/pkg/robots"
 )
 
 /**************
@@ -122,21 +123,7 @@ func eyes() {
 			fmt.Print("Enter domain (without protocol): ")
 			fmt.Scanln(&target)
 			target = "http://" + target + "/robots.txt"
-
-			res, err := http.Get(target)
-			if err != nil {
-				fmt.Println(err)
-				display()
-			}
-			defer res.Body.Close()
-
-			body, err := ioutil.ReadAll(res.Body)
-			if err != nil {
-				fmt.Println(err)
-				display()
-			}
-
-			fmt.Printf("%s", string(body))
+			fmt.Println(robots.Get(target))
 			display()
 		} else if answer == "n" {
 			fmt.Println("Going back to menu...")
