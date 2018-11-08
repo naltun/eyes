@@ -2,9 +2,10 @@ package linkgrab
 
 import (
 	"fmt"
-	"golang.org/x/net/html"
 	"io"
 	"net/http"
+
+	"golang.org/x/net/html"
 )
 
 /*
