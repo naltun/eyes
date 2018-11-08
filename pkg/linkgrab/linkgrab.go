@@ -15,15 +15,18 @@ import (
 
 func GetLinks(domain string) []string {
 	var links2 []string
+
 	res, err := http.Get(domain)
 	if err != nil {
 		fmt.Println(err)
 		return links2
 	}
+	defer res.Body.Close()
+
 	for _, v := range readLinks(res.Body) {
 		links2 = append(links2, v)
 	}
-	defer res.Body.Close()
+
 	return links2
 }
 
