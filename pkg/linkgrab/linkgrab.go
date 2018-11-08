@@ -1,10 +1,10 @@
 package linkgrab
 
 import (
+	"fmt"
+	"golang.org/x/net/html"
 	"io"
 	"net/http"
-
-	"golang.org/x/net/html"
 )
 
 /*
@@ -13,26 +13,22 @@ import (
 ** helping with this solution
  */
 
-var links1 []string
-var links2 []string
-
 func GetLinks(domain string) []string {
-	res, _ := http.Get(domain)
-	/*
-		if err != nil {
-			return fmt.Println(err)
-		}
-	*/
-	defer res.Body.Close()
-
+	var links2 []string
+	res, err := http.Get(domain)
+	if err != nil {
+		fmt.Println(err)
+		return links2
+	}
 	for _, v := range readLinks(res.Body) {
 		links2 = append(links2, v)
 	}
-
+	defer res.Body.Close()
 	return links2
 }
 
 func readLinks(body io.Reader) []string {
+	var links1 []string
 	t := html.NewTokenizer(body)
 
 	for {
