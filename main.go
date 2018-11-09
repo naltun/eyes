@@ -8,11 +8,12 @@ import (
 	"os"
 
 	"github.com/naltun/eyes/pkg/httpheader"
+	"github.com/naltun/eyes/pkg/linkgrab"
 	"github.com/naltun/eyes/pkg/robots"
 )
 
 /**************
-** VARIABLES  *
+* VARIABLES  *
 **************/
 
 var choice string
@@ -136,8 +137,11 @@ func eyes() {
 	case "8":
 		fmt.Print("Enter URL (without protocol): ")
 		fmt.Scanln(&target)
-		apiUrl := "https://api.hackertarget.com/pagelinks/?q=http://" + target
-		fmt.Println(curlReq(apiUrl))
+		target = "http://" + target
+		links := linkgrab.GetLinks(target)
+		for _, v := range links {
+			fmt.Println(v)
+		}
 		display()
 
 	case "9":
