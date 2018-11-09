@@ -133,6 +133,7 @@ func eyes() {
 	case "8":
 		fmt.Print("Enter URL (without protocol): ")
 		fmt.Scanln(&target)
+		target = "http://" + target
 		links := linkgrab.GetLinks(target)
 		for _, v := range links {
 			fmt.Println(v)
