@@ -9,6 +9,7 @@ import (
 
 	"github.com/naltun/eyes/pkg/httpheader"
 	"github.com/naltun/eyes/pkg/linkgrab"
+	"github.com/naltun/eyes/pkg/robots"
 )
 
 /**************
@@ -122,11 +123,14 @@ func eyes() {
 		if answer == "y" {
 			fmt.Print("Enter domain (without protocol): ")
 			fmt.Scanln(&target)
-			apiUrl := "http://" + target + "/robots.txt"
-			fmt.Println(curlReq(apiUrl))
+			target = "http://" + target + "/robots.txt"
+			fmt.Println(robots.Get(target))
+			display()
+		} else if answer == "n" {
+			fmt.Println("Going back to menu...")
 			display()
 		} else {
-			fmt.Println("Going back to menu...")
+			fmt.Println("Invalid answer. Going back to menu...")
 			display()
 		}
 
