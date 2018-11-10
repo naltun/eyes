@@ -216,11 +216,11 @@ func display() {
 }
 
 func main() {
-	s := make(chan os.Signal)
-	signal.Notify(s, syscall.SIGTERM)
-	signal.Notify(s, syscall.SIGINT)
+	c := make(chan os.Signal)
+	signal.Notify(c, syscall.SIGTERM)
+	signal.Notify(c, syscall.SIGINT)
 	go func() {
-		sig := <-s
+		sig := <-c
 		fmt.Printf("\nSignal caught: %+v. Exiting.\n", sig)
 		fmt.Println("Bye")
 		os.Exit(0)
