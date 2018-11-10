@@ -6,6 +6,8 @@ import (
 	"net"
 	"net/http"
 	"os"
+	"os/signal"
+	"syscall"
 
 	"github.com/naltun/eyes/pkg/httpheader"
 	"github.com/naltun/eyes/pkg/linkgrab"
@@ -214,6 +216,16 @@ func display() {
 }
 
 func main() {
+	s := make(chan os.Signal)
+	signal.Notify(s, syscall.SIGTERM)
+	signal.Notify(s, syscall.SIGINT)
+	go func() {
+		sig := <-s
+		fmt.Printf("\nSignal caught: %+v. Exiting.\n", sig)
+		fmt.Println("Bye")
+		os.Exit(0)
+	}()
+
 	banner()
 	menu()
 	eyes()
