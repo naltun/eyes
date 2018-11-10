@@ -17,4 +17,3 @@ This software is being led by Noah Altunian (github.com/naltun || `skeeba'), and
 ### LICENSE
 _eyes_ is proudly licensed under the GNU GPL v2. For more information on Free/Libre, Open Source Software, please read [Wikipedia](https://en.wikipedia.org/wiki/Free_and_open-source_software).
 
-Written by Noah Altunian (github.com/naltun), sometimes known as `skeeba'.
