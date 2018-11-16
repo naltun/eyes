@@ -8,6 +8,7 @@ import (
 	"os"
 
 	"github.com/naltun/eyes/pkg/httpheader"
+	"github.com/naltun/eyes/pkg/iplocation"
 	"github.com/naltun/eyes/pkg/linkgrab"
 	"github.com/naltun/eyes/pkg/robots"
 )
@@ -151,8 +152,12 @@ func eyes() {
 			fmt.Println("No argument given.")
 			display()
 		}
-		apiUrl := "http://ipinfo.io/" + target + "/geo"
-		fmt.Println(curlReq(apiUrl))
+
+		ipLocation := iplocation.Find(target)
+		for k, v := range ipLocation {
+			fmt.Println(v[k])
+		}
+
 		display()
 
 	case "10":
