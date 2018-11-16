@@ -14,19 +14,19 @@ type IpLocation struct {
 	Coordinates string `json:"loc"`
 }
 
-func Find(domain string) []string {
-	var ipLocation map[string]interface{}
+func Find(domain string) (IpLocation, error) {
+	var ipLocation IpLocation
 
 	url := "https://ipinfo.io/" + domain + "/geo"
 	res, err := http.Get(url)
 	if err != nil {
-		return err.Error()
+		return err
 	}
 	defer res.Body.Close()
 
 	body, err := ioutil.ReadAll(res.Body)
 	if err != nil {
-		return err.Error()
+		return err
 	}
 
 	json.Unmarshal([]byte(body), &ipLocation)

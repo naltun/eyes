@@ -153,9 +153,14 @@ func eyes() {
 			display()
 		}
 
-		ipLocation := iplocation.Find(target)
-		for k, v := range ipLocation {
-			fmt.Println(v[k])
+		ipLocation, err := iplocation.Find(target)
+		if err != nil {
+			fmt.Println(err)
+			display()
+		}
+
+		for _, v := range ipLocation {
+			fmt.Println(v)
 		}
 
 		display()
